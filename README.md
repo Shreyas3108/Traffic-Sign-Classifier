@@ -12,7 +12,7 @@ The steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 # Example Data
 
-![Set of images per class][Traffic-Sign-Classifier/Screenshot (24).png]
+![Set of images per class](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/Screenshot (24).png)
 
 
 Here's the code for the project! [project code](https://github.com/Shreyas3108/Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
@@ -32,8 +32,8 @@ The names for the classes are available at the signnames.csv from which we can m
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-![Train Dataset](Traffic-Sign-Classifier/train.png)
-![Test Dataset](Traffic-Sign-Classifier/test.png)
+![Train Dataset](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/train.png)
+![Test Dataset](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/test.png)
 
 ## PreProcess Data
 
@@ -44,8 +44,8 @@ Used greyscale technique since the traffic signs have least effect of colors and
 
 Image before :- 
 
-![Before](Traffic-Sign-Classifier/before.png)
-![After](Traffic-Sign-Classifier/after.png )
+![Before](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/before.png)
+![After](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/after.png)
 
 
 ## Architecure of Model. 
@@ -70,7 +70,7 @@ My final model consisted of the following layers:
 
 To train the model, 30 epochs of batch size 128 with learning rate 0.01 with the use of adam optimizer and softmax cross entropy with logits.
 
-![Architecture of LeNet 1 layer][https://ujwlkarn.files.wordpress.com/2016/08/screen-shot-2016-08-07-at-4-59-29-pm.png]
+![Architecture of LeNet 1 layer](https://ujwlkarn.files.wordpress.com/2016/08/screen-shot-2016-08-07-at-4-59-29-pm.png)
 
 
 ## Results 
@@ -84,10 +84,10 @@ My final model results were:
 
 Here are few traffic signs found on the web:
 
-![Priority Road](Traffic-Sign-Classifier/new_signs/12_priority_road.jpg) 
-![Yield](Traffic-Sign-Classifier/new_signs/13_yield.jpg)
-![Stop](Traffic-Sign-Classifier/new_signs/14_stop.jpg) 
-![Unknown  to the model](Traffic-Sign-Classifier/new_signs/99_unknown_sign.jpg)
+![Priority Road](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/new_signs/12_priority_road.jpg) 
+![Yield](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/new_signs/13_yield.jpg)
+![Stop](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/new_signs/14_stop.jpg) 
+![Unknown  to the model](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/new_signs/99_unknown_sign.jpg)
 The last image might be difficult to classify because it's not known in the dataset. 
 
 Here are the results of the prediction:
