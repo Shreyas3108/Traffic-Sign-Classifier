@@ -43,22 +43,30 @@ We can also optionally use :- img - mean(img) / max(img) - min(img).
 Used greyscale technique since the traffic signs have least effect of colors and due to this minimal affect of colors , Classifier can also avoid false classification based on colors. 
 
 Image before :- 
-
 ![Before](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/before.png)
 ![After](https://raw.githubusercontent.com/Shreyas3108/Traffic-Sign-Classifier/master/after.png)
 
 
 ## Architecure of Model. 
+LeNet Architecture was used as shown in the udacity classroom session ,I already used preprocessing using one_hot encoder as i usually use it as a good practice .I first trained a two layer Convolution of size 3x3 using CPU which was an exhaustive 1 hour process and gave 93.9 % in validation and test accuracy was horrible , hence i figured that some tweaks had to be done in order to successfully run the model as i suspected that another layer on Convolution might be required . After which i installed tensorflow-gpu from pip command (I usually use floydhub to train my models but since the file size was above 150mb floyhub was of no use) which then led to training data in 10-12 minutes approx.But after that validation accuracy increased to 99.3% and test accuracy was around 84% .After which i added one more layer on Convolution and used dropout which gave a better accuracy to the test set , somewhere around 94-95%. Then i again tried by removing dropout which gave me similar result. Hence i went forward with this model which is 3 layer convolution , but with two 5x5 and one 3x3 without dropout as my final solution. 
+Weight of first layer is of shape (5 , 5 , 1 , 48)
+Weight of second layer is of shape (3 , 3 , 48 , 96)
+Weight of third layer is of shape (3 , 3 , 96 , 172)
+EPOCH = 30 
+BATCH SIZE = 128 
+OPTIMIZER = adam
+![Adam Optimizer](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/Comparison-of-Adam-to-Other-Optimization-Algorithms-Training-a-Multilayer-Perceptron.png)
+learning rate = 0.001
 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x1 GreyScale image   							| 
-| Convolution 3x3     	| 1x1 stride, valid padding, outputs 28x28x48 	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x48 	|
 | RELU					|						28x28x48						|
 | Max pooling	      	| 2x2 stride, valid padding , outputs 14x14x48		|
-| Convolution 3x3	    | 1x1 Stride , valid padding , outputs 10x10x96 					|
+| Convolution 5x5	    | 1x1 Stride , valid padding , outputs 10x10x96 					|
 | RELU	  | 10X10X96        									|
 | Max pooling			|  2x2 stride , valid padding , output 5x5x96        				|
 | Convolution 3x3	    | 2x2 Stride , valid padding , outputs 3x3x172					|
@@ -68,7 +76,6 @@ My final model consisted of the following layers:
 |	Fully Connected - 1 					|		outputs 84									|
 |	Fully Connected - 2 					|		outputs 43									|
 
-To train the model, 30 epochs of batch size 128 with learning rate 0.01 with the use of adam optimizer and softmax cross entropy with logits.
 
 ![Architecture of LeNet 1 layer](https://ujwlkarn.files.wordpress.com/2016/08/screen-shot-2016-08-07-at-4-59-29-pm.png)
 
@@ -76,8 +83,8 @@ To train the model, 30 epochs of batch size 128 with learning rate 0.01 with the
 ## Results 
 
 My final model results were:
-* validation set accuracy of 97.1 
-* test set accuracy of 95.4
+* validation set accuracy of 99.6 
+* test set accuracy of 95.115
  
 
 ## Test a Model on New Images
